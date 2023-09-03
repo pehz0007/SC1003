@@ -54,6 +54,15 @@ def contains_digit(text):
             return True
     return False
 
+def password_is_correct(username, password):
+    if not check_user_exists(username):
+        print("User does not exists!")
+    elif registered_users[username] != password:
+        new_password = input("Wrong password, input again: ")
+        password_is_correct(username, new_password)
+    else:
+        print("Welcome back, {}, You can start the game".format(username))
+
 
 # Menu
 
@@ -100,11 +109,4 @@ if choice == 1:
 elif choice == 2:
     username = input("Input user name: ")
     password = input("Input password: ")
-
-    if not check_user_exists(username):
-        print("User does not exists!")
-    elif registered_users[username] != password:
-        password = input("Wrong password, input again: ")
-        # input logic
-    else:
-        print("Welcome back, {}, You can start the game".format(username))
+    password_is_correct(username, password)
