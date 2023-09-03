@@ -63,7 +63,7 @@ print("\t2. User Login")
 
 choice = int(input())
 
-if choice is 1:
+if choice == 1:
     print("User registration:")
     username = None
     password = None
@@ -97,7 +97,7 @@ if choice is 1:
 
     print("The users in system")
     print(registered_users)
-elif choice is 2:
+elif choice == 2:
     username = input("Input user name: ")
     password = input("Input password: ")
 
