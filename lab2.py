@@ -1,10 +1,11 @@
-
 import random as r
+
 
 def print_menu():
     print("Please select one of the following quizzes:")
     print("\t1. Number guessing")
     print("\t2. Calculate sum")
+
 
 def guessing_game():
     """
@@ -34,6 +35,7 @@ def guessing_game():
             print("Congratulations. You guessed it by {} trials!".format(trials))
             break
     return game_won
+
 
 def sum_of_5_int_game():
     """

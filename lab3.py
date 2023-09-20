@@ -4,6 +4,7 @@ registered_users = {
     'Tom': 'Password1'
 }
 
+
 def contains_special(text):
     """
     Check if the text contains any special characters
@@ -16,6 +17,7 @@ def contains_special(text):
             return True
     return False
 
+
 def check_user_exists(username):
     """
     Check if the username is registered in the :registered_users:
@@ -23,6 +25,7 @@ def check_user_exists(username):
     :return: True if the username exists in the dict
     """
     return username in registered_users.keys()
+
 
 def contains_upper(text):
     """
@@ -47,6 +50,7 @@ def contains_lower(text):
             return True
     return False
 
+
 def contains_digit(text):
     """
     Check if the text contains any digit(s)
@@ -57,6 +61,7 @@ def contains_digit(text):
         if text[i].isdigit():
             return True
     return False
+
 
 def password_is_correct(username, password):
     """
@@ -96,6 +101,7 @@ def is_password_strong(password):
         print("Your password is strong enough. User registered.")
     return password_is_strong
 
+
 def get_new_username():
     """
     Prompt the user to input a new username and check if it already exists.
@@ -110,6 +116,7 @@ def get_new_username():
             print("The user exists. Please choose another user name.")
         else:
             return username
+
 
 def get_new_strong_password():
     """
@@ -126,7 +133,8 @@ def get_new_strong_password():
         if is_password_strong(password):
             return password
 
-def register_new_user(username, password):
+
+def user_register(username, password):
     """
     Register a new user with the provided username and password.
 
@@ -134,6 +142,7 @@ def register_new_user(username, password):
     :param password: The password of the new user.
     """
     registered_users[username] = password
+
 
 def user_registration():
     """
@@ -146,10 +155,11 @@ def user_registration():
 
     username = get_new_username()
     password = get_new_strong_password()
-    register_new_user(username, password)
+    user_register(username, password)
 
     print("The users in system")
     print(registered_users)
+
 
 def user_login():
     """
@@ -163,10 +173,12 @@ def user_login():
     password = input("Input password: ")
     password_is_correct(username, password)
 
+
 def print_menu():
     print("Please select one of the  following options:")
     print("\t1. User Registration")
     print("\t2. User Login")
+
 
 if __name__ == '__main__':
     print_menu()
